@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles</title>
+    <link rel="stylesheet" href="/css/hoteles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Estos son nuestros hoteles...</h1>
+	
+	<form action="/hoteles/buscar" method="get" class="search-container">
+        <input type="text" id="nombre" name="nombre" placeholder="Buscar hotel por nombre..."/>
+        <button type="submit">Buscar</button>
+	</form>
+    
+    <table class="tablaConHoteles">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Precio noche</th>
+                <th>Disponible</th>
+            </tr>
+        </thead>
+        <tbody id="hotelTableBody">
+            <tr th:each="hotel : ${hoteles}" class="hotel">
+                <td th:text="${hotel.nombre}"></td>
+                <td th:text="${hotel.categoria}"></td>
+                <td th:text="${hotel.precio} + '€'"></td>
+                <td th:text="${hotel.disponible}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

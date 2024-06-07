@@ -1,0 +1,28 @@
+DROP DATABASE IF EXISTS vuelo;
+CREATE DATABASE vuelo;
+USE vuelo;
+
+CREATE TABLE vuelo(
+id_vuelo INT PRIMARY KEY AUTO_INCREMENT,
+aerolinea ENUM ('VUELING', 'RYANAIR', 'AIREUROPA', 'IBERIA', 'WAMOS', 'VOLOTEA', 'AIRNOSTRUM', 'BINTER', 'EASYJET'),
+fecha_vuelo DATE,
+precio DOUBLE,
+plazas_disponibles INT
+);
+
+INSERT INTO vuelo (aerolinea, fecha_vuelo, precio, plazas_disponibles) VALUES
+('VUELING', '2024-06-15', 120.50, 15),
+('RYANAIR', '2024-06-20', 80.00, 20),
+('AIREUROPA', '2024-07-05', 95.00, 18),
+('IBERIA', '2024-07-10', 150.00, 17),
+('WAMOS', '2024-08-01', 110.00, 160),
+('VOLOTEA', '2024-08-15', 75.00, 19),
+('AIRNOSTRUM', '2024-09-01', 130.00, 14),
+('BINTER', '2024-09-10', 100.00, 16),
+('EASYJET', '2024-09-20', 90.00, 21),
+('VUELING', '2024-10-01', 115.00, 155),
+('RYANAIR', '2024-10-15', 85.00, 20),
+('AIREUROPA', '2024-11-05', 100.00, 18),
+('IBERIA', '2024-11-10', 155.00, 17),
+('WAMOS', '2024-12-01', 120.00, 160),
+('VOLOTEA', '2024-12-15', 70.00, 19);

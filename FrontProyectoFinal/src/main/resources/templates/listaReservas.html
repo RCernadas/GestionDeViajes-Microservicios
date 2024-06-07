@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reservas</title>
+	<link rel="stylesheet" href="/css/reservas.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Estas son las reservas asociadas al mismo hotel...</h1>
+	<form action="/reservas/buscar" method="get" class="search-container">
+		<input type="text" id="nombre" name="nombre" placeholder="Busca un hotel..." />
+		<button type="submit">Buscar</button>
+	</form>
+	<table class="tablaConReservas">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>DNI</th>
+				<th>idHotel</th>
+				<th>idVuelo</th>
+			</tr>
+		</thead>
+		<tbody id="reservaTableBody">
+			<tr th:each="reserva : ${reservas}" class="reserva">
+				<td th:text="${reserva.nombreCliente}"></td>
+				<td th:text="${reserva.dni}"></td>
+				<td th:text="${reserva.idHotel}"></td>
+				<td th:text="${reserva.idVuelo}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

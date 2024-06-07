@@ -1,0 +1,111 @@
+h1 {
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 38px;
+    font-style: normal;
+    color: white;
+}
+
+h3 {
+	text-align: center;
+	font-style: normal;
+	font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: white;
+
+}
+
+body {
+    background-color: #f5f5f5;
+    background-image: url('/fondo_vuelos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: rgb(9, 142, 187);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: rgb(9, 142, 187);
+}
+
+.search-container button:hover {
+    background-color: rgb(9, 142, 187);
+}
+
+.botonReservar {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botonReservar:hover {
+    background-color: #4CAF50;
+}
+
+.botonReservar:hover {
+    background-color: #4CAF50;
+}
+
+.tablaConVuelos {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: rgb(255, 255, 255);
+}
+
+.tablaConVuelos thead tr {
+    background-color: rgb(9, 142, 187);
+    color: #ffffff;
+    text-align: left;
+}
+
+.tablaConVuelos th,
+.tablaConVuelos td {
+    padding: 12px 15px;
+}
+
+.tablaConVuelos tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tablaConVuelos tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tablaConHoteles tr:last-of-type {
+    border-bottom: 2px solid rgb(9, 142, 187);
+}
+
+.tablaConVuelos tbody tr.active-row {
+    font-weight: bold;
+    color: rgb(9, 142, 187);
+}

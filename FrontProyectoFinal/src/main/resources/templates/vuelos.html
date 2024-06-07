@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hoteles</title>
+	<link rel="stylesheet" href="/css/vuelos.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>RESERVA DE VUELOS</h1>
+	<h3>Introduza el número de plazas que dessea reservar para ver los vuelos con suficientes plazas: </h3>
+	<form action="/vuelos/buscar" method="get" class="search-container">
+		<input type="text" id="numPlazas" name="numPlazas" placeholder="Número de plazas a reservar..." />
+		<button id="botonBuscar" type="submit">Buscar</button>
+	</form>
+	<table class="tablaConVuelos">
+		<thead>
+			<tr>
+				<th>Compañía</th>
+				<th>Fecha</th>
+				<th>Precio</th>
+				<th>Plazas restantes</th>
+				<th>Reservar vuelo</th>
+			</tr>
+		</thead>
+		<tbody id="vueloTableBody">
+			<tr th:each="vuelo : ${vuelos}" class="vuelo">
+				<td th:text="${vuelo.aerolinea}"></td>
+				<td th:text="${vuelo.fechaVuelo}"></td>
+				<td th:text="${vuelo.precio} + '€'"></td>
+				<td th:text="${vuelo.plazasDisponibles}"></td>
+				<td> <a th:href="@{/vuelos/reservar?x=} + ${vuelo.idVuelo} + '&y=' + ${numPlazas}"><button
+							class="botonReservar" type="submit">Reservar</button></a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
